@@ -13,7 +13,6 @@
 /**
  * @brief Предствляет объект - динамический массив целых чисел.
 */
-
 struct DynamicArray
 {
     int Length;
@@ -28,7 +27,6 @@ struct DynamicArray
  * 
  * @param array - указатель на динамический массив.
  */
-
 void CreateDynamicArray(DynamicArray* array);
 
 /**
@@ -36,7 +34,6 @@ void CreateDynamicArray(DynamicArray* array);
  * 
  * @param array - указатель на динамический массив.
  */
-
 void ResizeDynamicArray(DynamicArray* array);
 
 /**
@@ -45,7 +42,6 @@ void ResizeDynamicArray(DynamicArray* array);
  * @param array - указатель на динамический массив.
  * @param value - добавляемый элемент.
  */
-
 void Add(DynamicArray* array, int value);
 
 /**
@@ -53,7 +49,6 @@ void Add(DynamicArray* array, int value);
  * 
  * @param array - указатель на динамический массив.
  */
-
 void PrintDynamicArray(DynamicArray* array);
 
 /**
@@ -61,7 +56,6 @@ void PrintDynamicArray(DynamicArray* array);
  * 
  * @param array - указатель на динамический массив.
  */
-
 void SortingDynamicArray(DynamicArray* array);
 
 /**
@@ -71,7 +65,6 @@ void SortingDynamicArray(DynamicArray* array);
  * @param index - индекс элемента.
  * @return int - -1, если индекс вне массива.
  */
-
 int RemoveAt(DynamicArray* array, int index);
 
 /**
@@ -82,7 +75,6 @@ int RemoveAt(DynamicArray* array, int index);
  * @param index - индекс элемента.
  * @return int - -1, если индекс вне массива.
  */
-
 int Insert(DynamicArray* array, int element, int index);
 
 /**
@@ -92,7 +84,6 @@ int Insert(DynamicArray* array, int element, int index);
  * @param value - искомый элемент.
  * @return int - индекс элемента.
  */
-
 int LinearSearch(DynamicArray* array, int value);
 
 /**
@@ -102,7 +93,6 @@ int LinearSearch(DynamicArray* array, int value);
  * @param element - искомый элемент.
  * @return int - индекс элемента.
  */
-
 int BinarySearch(DynamicArray* array, int element);
 
 /**
@@ -113,5 +103,4 @@ int BinarySearch(DynamicArray* array, int element);
  * @return true - если индекс выходит за границы.
  * @return false - если индекс не выходит за границы.
  */
-
 bool CheckIndexOutRange(DynamicArray* array, int index);

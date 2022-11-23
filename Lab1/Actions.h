@@ -15,7 +15,6 @@
  * 
  * @param dynamicArray - указатель на динамический массив.
  */
-
 void InitDynamicArray(DynamicArray* dynamicArray);
 
 /**
@@ -23,7 +22,6 @@ void InitDynamicArray(DynamicArray* dynamicArray);
  * 
  * @param dynamicArray - указатель на динамический массив.
  */
-
 void AddElement(DynamicArray* dynamicArray);
 
 /**
@@ -31,7 +29,6 @@ void AddElement(DynamicArray* dynamicArray);
  * 
  * @param dynamicArray - указатель на динамический массив.
  */
-
 void RemoveElement(DynamicArray* dynamicArray);
 
 /**
@@ -39,7 +36,6 @@ void RemoveElement(DynamicArray* dynamicArray);
  * 
  * @param dynamicArray - указатель на динамический массив.
  */
-
 void InsertElement(DynamicArray* dynamicArray);
 
 /**
@@ -47,7 +43,6 @@ void InsertElement(DynamicArray* dynamicArray);
  * 
  * @param dynamicArray - указатель на динамический массив.
  */
-
 void SortArray(DynamicArray* dynamicArray);
 
 /**
@@ -55,7 +50,6 @@ void SortArray(DynamicArray* dynamicArray);
  * 
  * @param dynamicArray - указатель на динамический массив.
  */
-
 void LinearSearchElement(DynamicArray* dynamicArray);
 
 /**
@@ -63,7 +57,6 @@ void LinearSearchElement(DynamicArray* dynamicArray);
  * 
  * @param dynamicArray - указатель на динамический массив.
  */
-
 void BinarySearchElement(DynamicArray* dynamicArray);
 
 /**
@@ -71,7 +64,6 @@ void BinarySearchElement(DynamicArray* dynamicArray);
  * 
  * @param dynamicArray - указатель на динамический массив.
  */
-
 void RecreateDynamicArray(DynamicArray* dynamicArray);
 
 /**
@@ -79,5 +71,4 @@ void RecreateDynamicArray(DynamicArray* dynamicArray);
  * 
  * @return int - возвращает число.
  */
-
 int CheckForDigit();
