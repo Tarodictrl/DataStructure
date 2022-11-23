@@ -72,3 +72,10 @@ void BinarySearchElement(DynamicArray* dynamicArray);
  */
 
 void RecreateDynamicArray(DynamicArray* dynamicArray);
+
+/**
+ * @brief Проверяет вводимое значение на число.
+ * 
+ * @return int - возвращает число.
+ */
+int CheckForDigit();

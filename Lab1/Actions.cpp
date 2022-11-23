@@ -12,19 +12,12 @@
 #include "Actions.h"
 using namespace std;
 
-void InitDynamicArray(DynamicArray *dynamicArray)
+int CheckForDigit()
 {
-    CreateDynamicArray(dynamicArray);
-    cout << "Array created!" << endl;
-}
-
-void AddElement(DynamicArray *dynamicArray)
-{
-    int element;
     bool run = true;
+    int element;
     while (run)
     {
-        cout << "Enter the element: ";
         cin >> element;
         if (cin.fail())
         {
@@ -37,16 +30,27 @@ void AddElement(DynamicArray *dynamicArray)
             run = false;
         }
     }
+    return element;
+}
+
+void InitDynamicArray(DynamicArray *dynamicArray)
+{
+    CreateDynamicArray(dynamicArray);
+    cout << "Array created!" << endl;
+}
+
+void AddElement(DynamicArray *dynamicArray)
+{
+    cout << "Enter the value to add: ";
+    int element = CheckForDigit();
     Add(dynamicArray, element);
     PrintDynamicArray(dynamicArray);
 }
 
 void RemoveElement(DynamicArray *dynamicArray)
 {
-    int index;
-
     cout << "Enter the index of the item to delete: ";
-    cin >> index;
+    int index = CheckForDigit();
 
     RemoveAt(dynamicArray, index);
     PrintDynamicArray(dynamicArray);
@@ -54,14 +58,10 @@ void RemoveElement(DynamicArray *dynamicArray)
 
 void InsertElement(DynamicArray *dynamicArray)
 {
-    int element;
-    int index;
-
     cout << "Enter the numeric value to insert: ";
-    cin >> element;
+    int element = CheckForDigit();
     cout << "Enter the index: ";
-    cin >> index;
-
+    int index = CheckForDigit();
     Insert(dynamicArray, element, index);
     PrintDynamicArray(dynamicArray);
 }
@@ -76,11 +76,10 @@ void SortArray(DynamicArray *dynamicArray)
 
 void LinearSearchElement(DynamicArray *dynamicArray)
 {
-    int element;
     int indexOfFoundElement;
 
     cout << "Enter the item to search for: ";
-    cin >> element;
+    int element = CheckForDigit();
 
     indexOfFoundElement = LinearSearch(dynamicArray, element);
 
@@ -95,11 +94,10 @@ void BinarySearchElement(DynamicArray *dynamicArray)
         return;
     }
 
-    int element;
     int indexOfFoundElement;
 
     cout << "Enter the desired element: ";
-    cin >> element;
+    int element = CheckForDigit();
 
     indexOfFoundElement = BinarySearch(dynamicArray, element);
 

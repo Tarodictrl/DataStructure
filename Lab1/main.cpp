@@ -19,7 +19,6 @@ using namespace std;
 int main()
 {
     DynamicArray* array = new DynamicArray();
-    int number;
 
     InitDynamicArray(array);
     cout << "0. Close program.\n"
@@ -28,7 +27,7 @@ int main()
             "3. Insert an element by index into the array.\n"
             "4. Sort the array.\n"
             "5. Linear element search.\n"
-            "6.Binary element search.\n"
+            "6. Binary element search.\n"
             "7. Recreate the array.\n"
             "8. Output an array \n" << endl;
     cout << endl;
@@ -36,8 +35,7 @@ int main()
     while (true)
     {
         cout << "Enter the action number: ";
-        cin >> number;
-
+        int number = CheckForDigit();
         switch (number)
         {
             case 0:
