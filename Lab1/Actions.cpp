@@ -23,13 +23,14 @@ int CheckForDigit()
         {
             cin.clear();
             cin.ignore(32767, '\n');
-            cout << "Error! Enter the number!" << endl;
+            cout << "Error! Enter the number!: ";
         }
         else
         {
             run = false;
         }
     }
+    cout << endl;
     return element;
 }
 
@@ -51,7 +52,11 @@ void RemoveElement(DynamicArray *dynamicArray)
 {
     cout << "Enter the index of the item to delete: ";
     int index = CheckForDigit();
-
+    if (index > dynamicArray->Length)
+    {
+        cout << "Error! Index out of range!" << endl;
+        return;
+    }
     RemoveAt(dynamicArray, index);
     PrintDynamicArray(dynamicArray);
 }
@@ -62,6 +67,11 @@ void InsertElement(DynamicArray *dynamicArray)
     int element = CheckForDigit();
     cout << "Enter the index: ";
     int index = CheckForDigit();
+    if (index > dynamicArray->Length)
+    {
+        cout << "Error! Index out of range!" << endl;
+        return;
+    }
     Insert(dynamicArray, element, index);
     PrintDynamicArray(dynamicArray);
 }

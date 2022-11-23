@@ -63,6 +63,7 @@ void LinearSearchElement(DynamicArray* dynamicArray);
  * 
  * @param dynamicArray - указатель на динамический массив.
  */
+
 void BinarySearchElement(DynamicArray* dynamicArray);
 
 /**
@@ -78,4 +79,5 @@ void RecreateDynamicArray(DynamicArray* dynamicArray);
  * 
  * @return int - возвращает число.
  */
+
 int CheckForDigit();

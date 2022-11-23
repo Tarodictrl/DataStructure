@@ -69,9 +69,10 @@ void SortingDynamicArray(DynamicArray* array);
  * 
  * @param array - указатель на динамический массив.
  * @param index - индекс элемента.
+ * @return int - -1, если индекс вне массива.
  */
 
-void RemoveAt(DynamicArray* array, int index);
+int RemoveAt(DynamicArray* array, int index);
 
 /**
  * @brief Вставляет элемент в динамический массив.
@@ -79,9 +80,10 @@ void RemoveAt(DynamicArray* array, int index);
  * @param array - указатель на динамический массив.
  * @param element - вставляемый элемент.
  * @param index - индекс элемента.
+ * @return int - -1, если индекс вне массива.
  */
 
-void Insert(DynamicArray* array, int element, int index);
+int Insert(DynamicArray* array, int element, int index);
 
 /**
  * @brief Линейный поиск элемента в динамическом массиве.

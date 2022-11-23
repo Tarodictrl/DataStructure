@@ -117,11 +117,11 @@ void SortingDynamicArray(DynamicArray *array)
     }
 }
 
-void RemoveAt(DynamicArray *array, int index)
+int RemoveAt(DynamicArray *array, int index)
 {
     if (CheckIndexOutRange(array, index))
     {
-        return;
+        return -1;
     }
 
     for (int i = index; i < array->Length - 1; i++)
@@ -131,13 +131,14 @@ void RemoveAt(DynamicArray *array, int index)
 
     array->Length--;
     ResizeDynamicArray(array);
+    return 0;
 }
 
-void Insert(DynamicArray *array, int element, int index)
+int Insert(DynamicArray *array, int element, int index)
 {
     if (CheckIndexOutRange(array, index))
     {
-        return;
+        return -1;
     }
 
     array->Length++;
@@ -150,6 +151,7 @@ void Insert(DynamicArray *array, int element, int index)
 
     array->Array[index] = element;
     array->IsSorted = false;
+    return 0;
 }
 
 bool CheckIndexOutRange(DynamicArray *array, int index)
