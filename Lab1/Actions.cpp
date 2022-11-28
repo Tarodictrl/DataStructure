@@ -14,24 +14,17 @@ using namespace std;
 
 int CheckForDigit()
 {
-    bool run = true;
     int element;
-    while (run)
+    while (true)
     {
         cin >> element;
-        if (cin.fail())
-        {
-            cin.clear();
-            cin.ignore(32767, '\n');
-            cout << "Error! Enter the number!: ";
-        }
-        else
-        {
-            run = false;
-        }
+
+        if (!cin.fail()) return element;
+        
+        cin.clear();
+        cin.ignore(32767, '\n');
+        cout << "Error! Enter the number!: ";
     }
-    cout << endl;
-    return element;
 }
 
 void InitDynamicArray(DynamicArray *dynamicArray)
@@ -86,12 +79,10 @@ void SortArray(DynamicArray *dynamicArray)
 
 void LinearSearchElement(DynamicArray *dynamicArray)
 {
-    int indexOfFoundElement;
-
     cout << "Enter the item to search for: ";
     int element = CheckForDigit();
 
-    indexOfFoundElement = LinearSearch(dynamicArray, element);
+    int indexOfFoundElement = LinearSearch(dynamicArray, element);
 
     cout << "The desired value: " << element << " Element index: " << indexOfFoundElement << endl;
 }
@@ -104,12 +95,10 @@ void BinarySearchElement(DynamicArray *dynamicArray)
         return;
     }
 
-    int indexOfFoundElement;
-
     cout << "Enter the desired element: ";
     int element = CheckForDigit();
 
-    indexOfFoundElement = BinarySearch(dynamicArray, element);
+    int indexOfFoundElement = BinarySearch(dynamicArray, element);
 
     cout << "The desired element: " << element << " Element index:  " << indexOfFoundElement << endl;
 }

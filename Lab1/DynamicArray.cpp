@@ -19,7 +19,7 @@ void CreateDynamicArray(DynamicArray *array)
 {
     array->Capacity = capacity;
     array->Length = 0;
-    array->Growth = 2;
+    array->GrowthFactory = 2;
     array->Array = new int[array->Capacity];
     array->IsSorted = false;
 }
@@ -28,11 +28,11 @@ void ResizeDynamicArray(DynamicArray *array)
 {
     if (array->Length >= array->Capacity)
     {
-        array->Capacity *= array->Growth;
+        array->Capacity *= array->GrowthFactory;
     }
-    else if (array->Length <= array->Capacity / array->Growth)
+    else if (array->Length <= array->Capacity / array->GrowthFactory)
     {
-        array->Capacity /= array->Growth;
+        array->Capacity /= array->GrowthFactory;
     }
 
     int *temp = new int[array->Capacity];
