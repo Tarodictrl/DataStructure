@@ -33,6 +33,12 @@ void RemoveElement(List* list)
 {
     cout << "Enter index: ";
     int index = CheckForDigit();
+    if (index < 0 || index >= list->Length)
+    {
+        cout << "Error! Index out of range!" << endl;
+        system("pause");
+        return;
+    }
     Remove(list, index);
     PrintList(list);
 }
@@ -116,17 +122,17 @@ void ConductResearch()
 {
 	List* list = new List();
 
-	for (int step = 100000; step <= 4000000; step += 100000)
+	for (int step = 1000000; step <= 5000000; step += 1000000)
 	{
 		int randomValue = rand() % 20 - 10;
         Clear(list);
 		RandomValues(list, step);
         auto start = chrono::steady_clock::now();
 		//InsertBefore(list, list->Length/2, randomValue);
-		InsertInBegin(list, 10);
-		//Remove(list, list->Length / 2);
+		//InsertInBegin(list, randomValue);
+		Remove(list, list->Length / 2);
 		auto end = chrono::steady_clock::now();
-        auto time = chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
+        auto time = chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 		std::cout << time << ", " << step << endl;
 	}
     system("pause");

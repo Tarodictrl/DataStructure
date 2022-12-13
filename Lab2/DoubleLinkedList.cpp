@@ -1,4 +1,3 @@
-#include "iostream"
 #include "DoubleLinkedList.h"
 
 using namespace std;
@@ -238,18 +237,6 @@ int LinearSearch(List *list, int value)
         item = item->Next;
     }
     return -1;
-}
-
-void PrintList(List *list)
-{
-    ListItem *item = list->Head;
-    cout << "[ ";
-    while (item != nullptr)
-    {
-        std::cout << item->Value << " ";
-        item = item->Next;
-    }
-    cout << "]" << endl;
 }
 
 void Clear(List *list)
