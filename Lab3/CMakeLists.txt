@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(SD VERSION 0.1.0)
+include_directories(Model)
+include_directories(Stack)
+include_directories(Services)
+set(STACK_MENU Menu/MenuStack.cpp Menu/MenuStack.h)
+set(STACK Model/Stack/Stack.cpp Model/Stack/Stack.h)
+set(VALIDATOR Services/Validator.cpp Services/Validator.h)
+add_executable(Lab3 main.cpp ${STACK_ACTIONS} ${STACK} ${STACK_MENU} ${VALIDATOR})
+set(CMAKE_CXX_STANDARD 17)
+
