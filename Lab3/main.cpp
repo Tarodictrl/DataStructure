@@ -2,6 +2,7 @@
 #include "Services/Validator.h"
 #include "Model/Stack/Stack.h"
 #include "Menu/MenuStack.h"
+#include "Menu/MenuRingBuffer.h"
 
 using namespace std;
 
@@ -24,6 +25,7 @@ int main()
                 break;
             case 2:
                 system("cls");
+                MenuRingBuffer();
                 break;
             case 3:
                 system("cls");
