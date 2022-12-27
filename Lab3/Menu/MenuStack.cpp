@@ -42,10 +42,12 @@ void MenuStack()
             {
                 if (stack != nullptr)
                 {
-                    cout << "Stack already exists" << endl;
+                    system("cls");
+                    cout << "Stack already exists!" << endl;
                     break;
                 }
                 stack = InitStack(4);
+                system("cls");
                 cout << "Stack created" << endl;
                 break;
             }
@@ -53,32 +55,40 @@ void MenuStack()
             {
                 if (stack == nullptr)
                 {
-                    cout << "Stack does not exist" << endl;
+                    system("cls");
+                    cout << "Stack does not exist!" << endl;
                     break;
                 }
                 int value = CheckingForDigit("Enter the value: ");
                 Push(stack, value);
+                system("cls");
+                cout << "Element added" << endl;
                 break;
             }
             case 3:
             {
                 if (stack == nullptr)
                 {
+                    system("cls");
                     cout << "Stack does not exist" << endl;
                     break;
                 }
                 cout << Pop(stack) << endl;
+                system("cls");
+                cout << "Element got" << endl;
                 break;
             }
             case 4:
             {
                 if (stack == nullptr)
                 {
-                    cout << "Stack does not exist" << endl;
+                    system("cls");
+                    cout << "Stack does not exist!" << endl;
                     break;
                 }
                 delete stack;
                 stack = nullptr;
+                system("cls");
                 cout << "Stack deleted" << endl;
                 break;
             }

@@ -1,3 +1,5 @@
+#ifndef STACK_H_
+#define STACK_H_
 
 /**
  * @brief Хранит данные о стеке.
@@ -5,9 +7,28 @@
  */
 struct Stack
 {
+	/**
+	 * @brief Указатель на массив данных.
+	 * 
+	 */
     int* Buffer;
+
+	/**
+	 * @brief Индекс верхнего элемента стека.
+	 * 
+	 */
 	int Top;
+
+	/**
+	 * @brief Размер стека.
+	 * 
+	 */
 	int Capacity;
+
+	/**
+	 * @brief Коэффициент увеличения стека.
+	 * 
+	 */
 	const int GrowthFactor = 2;
 };
 
@@ -64,3 +85,5 @@ bool IsEmptyStack(Stack* stack);
  * @param stack указатель на стек.
  */
 void Delete(Stack* stack);
+
+#endif

@@ -43,31 +43,48 @@ struct RingBuffer
 };
 
 /**
- * Инициализирует кольцевой буфер.
+ * @brief Инициализирует кольцевой буфер.
+ * 
+ * @param sizeBuffer Размер буфера.
+ * @return RingBuffer* Указатель на буфер.
  */
 RingBuffer* InitRingBuffer(int sizeBuffer);
 
 /**
- * Добавляет в кольцевой буфер.
+ * @brief Добавляет в кольцевой буфер.
+ * 
+ * @param buffer Указатель на буфер.
+ * @param data Значение которое нужно добавить.
  */
 void PushRingBuffer(RingBuffer* buffer, int data);
 
 /**
- * Возвращает из кольцевой буфера.
+ * @brief Удаляет из кольцевого буфера.
+ * 
+ * @param buffer Указатель на буфер.
+ * @return int Значение которое было удалено.
  */
 int PopRingBuffer(RingBuffer* buffer);
 
 /**
- * Вовращает информацию о свободном месте в кольцевом буфере.
+ * @brief Возвращает информацию о свободном месте в кольцевом буфере.
+ * 
+ * @param buffer Указатель на буфер.
+ * @return int Свободное место в буфере.
  */
 int FreeMemoryInfo(RingBuffer* buffer);
 
 /**
- * Возвращает информацию о занятом месте в кольцевом буфере.
+ * @brief Возвращает информацию о занятом месте в кольцевом буфере.
+ * 
+ * @param buffer Указатель на буфер.
+ * @return int Занятое место в буфере.
  */
 int UsedMemoryInfo(RingBuffer* buffer);
 
 /**
- * Изменяет размер буфера.
+ * @brief Изменяет размер кольцевого буфера.
+ * 
+ * @param buffer Указатель на буфер. 
  */
 void ResizeRingBuffer(RingBuffer* buffer);

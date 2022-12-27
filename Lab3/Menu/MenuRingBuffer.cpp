@@ -25,6 +25,7 @@ void PrintRingBuffer(RingBuffer* buffer)
 
 void MenuRingBuffer()
 { 
+    system("cls");
     RingBuffer* buffer = nullptr;
     while (true)
     {
@@ -53,7 +54,7 @@ void MenuRingBuffer()
                 if (buffer != nullptr)
                 {
                     system("cls");
-                    cout << "Buffer already exists" << endl;
+                    cout << "Buffer already exists!" << endl;
                     break;
                 }
                 buffer = InitRingBuffer(4);
@@ -66,7 +67,7 @@ void MenuRingBuffer()
                 if (buffer == nullptr)
                 {
                     system("cls");
-                    cout << "Buffer does not exist" << endl;
+                    cout << "Buffer does not exist!" << endl;
                     break;
                 }
                 int value = CheckingForDigit("Enter the value: ");
@@ -80,10 +81,11 @@ void MenuRingBuffer()
                 if (buffer == nullptr)
                 {
                     system("cls");
-                    cout << "Buffer does not exist" << endl;
+                    cout << "Buffer does not exist!" << endl;
                     break;
                 }
                 int value = PopRingBuffer(buffer);
+                system("cls");
                 cout << "Value: " << value << endl;
                 break;
             }
@@ -92,7 +94,7 @@ void MenuRingBuffer()
                 if (buffer == nullptr)
                 {
                     system("cls");
-                    cout << "Buffer does not exist" << endl;
+                    cout << "Buffer does not exist!" << endl;
                     break;
                 }
                 system("cls");
@@ -104,7 +106,7 @@ void MenuRingBuffer()
                 if (buffer == nullptr)
                 {
                     system("cls");
-                    cout << "Buffer does not exist" << endl;
+                    cout << "Buffer does not exist!" << endl;
                     break;
                 }
                 system("cls");
