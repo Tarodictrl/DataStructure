@@ -46,9 +46,12 @@ void MenuRingBuffer()
         int choise = CheckingForDigit("Enter the number of the task: ");
         switch (choise)
         {
+            //TODO: Done
             case 0:
+            {
                 system("cls");
                 break;
+            }
             case 1:
             {
                 if (buffer != nullptr)
@@ -121,8 +124,8 @@ void MenuRingBuffer()
                 cout << "Buffer deleted" << endl;
                 break;
             }
-            case 7:
-                return;
+            
+            case 7: return;
         }
     }
     

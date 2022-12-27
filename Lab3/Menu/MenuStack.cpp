@@ -35,9 +35,12 @@ void MenuStack()
         int choise = CheckingForDigit("Enter the number of the task: ");
         switch (choise)
         {
+            //TODO: Done
             case 0:
+            {
                 system("cls");
                 break;
+            }
             case 1:
             {
                 if (stack != nullptr)
@@ -92,8 +95,8 @@ void MenuStack()
                 cout << "Stack deleted" << endl;
                 break;
             }
-            case 5:
-                return;
-            }
+            
+            case 5: return;
+        }
     }
 }

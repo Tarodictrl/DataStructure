@@ -45,76 +45,91 @@ void MenuRingBufferQueue()
 
         switch (key)
         {
-        case 0:
-            system("cls");
-            break;
-        case 1:
-            if (queue != nullptr)
-            {
-                cout << "Queue already created!" << endl;
-            }
-            else
-            {
-                queue = InitQueueRingBuffer(4);
-                system("cls");
-                cout << "Queue created" << endl;
-            }
-
-            break;
-        case 2:
-            if (queue != nullptr)
-            {
-                int value = CheckingForDigit("Enter value: ");
-                EnqueueRingBuffer(queue, value);
-                system("cls");
-                cout << "Value added." << endl;
-            }
-            else
+            // TODO: Done
+            case 0:
             {
                 system("cls");
-                cout << "The queue is not initialized!" << endl;
+                break;
             }
-
-            break;
-        case 3:
-            if (queue != nullptr)
+            case 1:
             {
-                if (LenghtQueueRingBuffer(queue) > 0)
+                if (queue != nullptr)
                 {
+                    cout << "Queue already created!" << endl;
+                }
+                else
+                {
+                    queue = InitQueueRingBuffer(4);
                     system("cls");
-                    cout << "Value: " << DequeueRingBuffer(queue) << endl;
+                    cout << "Queue created" << endl;
+                }
+
+                break;
+            }
+            case 2:
+            {
+                if (queue != nullptr)
+                {
+                    int value = CheckingForDigit("Enter value: ");
+                    EnqueueRingBuffer(queue, value);
+                    system("cls");
+                    cout << "Value added." << endl;
                 }
                 else
                 {
                     system("cls");
-                    cout << "The queue is empty!" << endl;
+                    cout << "The queue is not initialized!" << endl;
                 }
+
+                break;
             }
-            else
+            case 3:
+            {
+                if (queue != nullptr)
+                {
+                    if (LenghtQueueRingBuffer(queue) > 0)
+                    {
+                        system("cls");
+                        cout << "Value: " << DequeueRingBuffer(queue) << endl;
+                    }
+                    else
+                    {
+                        system("cls");
+                        cout << "The queue is empty!" << endl;
+                    }
+                }
+                else
+                {
+                    system("cls");
+                    cout << "The queue is not initialized!" << endl;
+                }
+
+                break;
+            }
+            case 4:
+            {
+                if (queue != nullptr)
+                {
+                    DeleteQueueRingBuffer(queue);
+                    delete queue;
+                    queue = nullptr;
+                    system("cls");
+                    cout << "Queue deleted." << endl;
+                }
+
+                break;
+            }
+            case 5:
             {
                 system("cls");
-                cout << "The queue is not initialized!" << endl;
+                return;
             }
-
-            break;
-        case 4:
-            if (queue != nullptr)
+            default:
             {
-                DeleteQueueRingBuffer(queue);
-                delete queue;
-                queue = nullptr;
                 system("cls");
-                cout << "Queue deleted." << endl;
+                cout << "Incorrect number!" << endl;
+                break;
             }
-
-            break;
-        case 5:
-            system("cls");
-            return;
-        default:
-            system("cls");
-            cout << "Incorrect number!" << endl;
-            break;
         }
     }
 }
