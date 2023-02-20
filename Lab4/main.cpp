@@ -1,23 +1,9 @@
 #include <iostream>
 #include "Services/Validator.h"
 #include "Model/Dictionary/Dictionary.h"
+#include "string"
 
 using namespace std;
-
-string IsEmptyString(const char* text)
-{
-	while (true)
-	{
-		cout << text;
-		string value;
-		cin >> value;
-
-		if (value != "") 
-		{
-			return value;
-		}
-	}
-}
 
 void PrintDictionary(Dictionary* dict)
 {
@@ -34,7 +20,7 @@ void PrintDictionary(Dictionary* dict)
 
 		while (current != nullptr)
 		{
-			cout << "Key: " << current->Key << "\t Value: " << current->Value;
+			cout << "[" << i << "]" << "Key: " << current->Key << "\t Value: " << current->Value;
 			current = current->Next;
 			cout << endl;
 		}
@@ -50,17 +36,17 @@ void PrintHashTable(HashTable* table)
 		current = table->Array[i];
 		if (current == nullptr)
 		{
-			cout << "NULL\n";
+			cout << "[" << i << "]" << "NULL\n";
 			continue;
 		}
 		if (current->Next == nullptr)
 		{
-			cout << "Key: " << current->Key << "\t Value: " << current->Value << endl;
+			cout << "[" << i << "]" << "Key: " << current->Key << "\t Value: " << current->Value << endl;
 			continue;
 		}
 		while (current != nullptr)
 		{
-			cout << "Key: " << current->Key << "\t Value: " << current->Value << " -> ";
+			cout << "[" << i << "]" << "Key: " << current->Key << "\t Value: " << current->Value << " -> ";
 			current = current->Next;
 		}
 		cout << endl;
@@ -99,17 +85,14 @@ int main()
 		cout << "4. Find." << endl;
 		cout << "5. Exit." << endl;
 
-		int number = CheckingForDigit("Select actions: ");
-
-		cout << "\n--------------------------------------------" << endl;
-		cout << "                                           |" << endl;
+		int number = AssertIsDigit("Select actions: ");
 
 		switch (number)
 		{
 			case 1: 
 			{
-				string key = IsEmptyString("Enter key: ");
-				string value = IsEmptyString("Enter value: ");
+				string key = AssertIsNotEmptyString("Enter key: ");
+				string value = AssertIsNotEmptyString("Enter value: ");
 				AddItem(dictionary, value, key);
 				AddElement(hashTable, key, value);
 				
@@ -136,7 +119,7 @@ int main()
 			}
 			case 2:
 			{
-				string key = IsEmptyString("Enter key: ");
+				string key = AssertIsNotEmptyString("Enter key: ");
 				
 				if (RemoveItem(dictionary, key) == -1)		
 				{
@@ -163,7 +146,7 @@ int main()
 			case 4:
 			{
                 system("cls");
-				string key = IsEmptyString("Enter key: ");
+				string key = AssertIsNotEmptyString("Enter key: ");
 
 				string searchValueDictionary = FindItem(dictionary, key);
 
@@ -201,8 +184,5 @@ int main()
 				break;
 			}
 		}
-
-		cout << "                                           |" << endl;
-		cout << "--------------------------------------------\n" << endl;
 	}
 }

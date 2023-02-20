@@ -5,32 +5,32 @@
 using namespace std;
 
 /**
- * Õðàíèò äàííûå î ñëîâàðå.
+ * Хранит данные о словаре.
  */
 struct Dictionary
 {
 	/**
-	 * Õåø-òàáëèöà.
+	 * хэш-таблица.
 	 */
 	HashTable* Table = new HashTable;
 };
 
 /**
- * Äîáàâëÿåò ýëåìåíò â ñëîâàðü.
+ * Добавляет элемент в словарь.
  */
 bool AddItem(Dictionary* dict, string value, string key);
 
 /**
- * Óäàëÿåò ýëåìåíò èç ñëîâàðÿ.
+ * Удаляет элемент из словаря.
  */
 int RemoveItem(Dictionary* dict, string key);
 
 /**
- * Ïîèñê ýëåìåíòà â ñëîâàðå.
+ * Находит элемент в словаре.
  */
 string FindItem(Dictionary* dict, string key);
 
 /**
- * Óäàëåíèå ñëîâàðÿ.
+ * Удаляет словарь.
  */
 void DeleteDictionary(Dictionary* dict);

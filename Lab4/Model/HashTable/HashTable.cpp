@@ -23,19 +23,17 @@ bool AddElement(HashTable* table, string key, string value)
 
 	Node* node = new Node;
 
+	node->Key = key;
+	node->Value = value;
+
 	if (table->Array[index] == nullptr)
 	{
-		node->Key = key;
-		node->Value = value;
 
 		table->Array[index] = node;
 		table->Count++;
 
 		return true;
 	}
-
-	node->Key = key;
-	node->Value = value;
 
 	if (ResolveCollisions(table->Array[index], node))
 	{
@@ -95,27 +93,6 @@ int RemoveElement(HashTable* table, string key)
 	return 0;
 }
 
-string FindElement(HashTable* table, string key)
-{
-	Node* current = table->Array[HashFunction(table->Capacity, key)];
-
-	if (current == nullptr)
-	{
-		return "";
-	}
-
-	if (current->Next == nullptr)
-	{
-		return current->Value;
-	}
-
-	while (current->Key != key)
-	{
-		current = current->Next;
-	}
-	return current->Value;
-}
-
 int HashFunction(int capacity, string key)
 {
 	int size = key.length();
@@ -172,4 +149,25 @@ bool ResolveCollisions(Node* first, Node* node)
 
 		first = first->Next;
 	}
+}
+
+string FindElement(HashTable* table, string key)
+{
+	Node* current = table->Array[HashFunction(table->Capacity, key)];
+
+	if (current == nullptr)
+	{
+		return "";
+	}
+
+	if (current->Next == nullptr)
+	{
+		return current->Value;
+	}
+
+	while (current->Key != key)
+	{
+		current = current->Next;
+	}
+	return current->Value;
 }

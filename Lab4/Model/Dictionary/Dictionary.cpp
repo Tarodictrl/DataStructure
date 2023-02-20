@@ -28,11 +28,6 @@ int RemoveItem(Dictionary* dict, string key)
 	return RemoveElement(dict->Table, key);
 }
 
-string FindItem(Dictionary* dict, string key)
-{
-	return FindElement(dict->Table, key);
-}
-
 void DeleteDictionary(Dictionary* dict)
 {
 	for (int i = 0; i < dict->Table->Capacity; i++)
@@ -49,4 +44,9 @@ void DeleteDictionary(Dictionary* dict)
 
 	delete[] dict->Table->Array;
 	delete dict->Table;
+}
+
+string FindItem(Dictionary* dict, string key)
+{
+	return FindElement(dict->Table, key);
 }

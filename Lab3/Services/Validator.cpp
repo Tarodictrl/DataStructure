@@ -1,6 +1,7 @@
 #include "Validator.h"
 #include <iostream>
 
+
 using namespace std;
 
 int CheckingForDigit(const char* text)
