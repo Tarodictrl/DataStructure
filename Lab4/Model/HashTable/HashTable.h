@@ -8,7 +8,7 @@ using namespace std;
 struct HashTable
 {
 	/**
-	 * @brief Growth factor for rehashing.
+	 * @brief Фактор роста для рехешинга.
 	 * 
 	 */
 	const int GrowthFactor = 2;
@@ -58,14 +58,15 @@ HashTable* InitHashTable(int capacity);
  */
 bool AddElement(HashTable* table, string key, string value);
 
+//TODO: DONE
 /**
  * @brief Удаление элемента из таблицы.
  * 
  * @param table Указатель на таблицу.
  * @param key Ключ.
- * @return int Ошибку
+ * @return bool Ошибку.
  */
-int RemoveElement(HashTable* table, string key);
+bool RemoveElement(HashTable* table, string key);
 
 /**
  * @brief Поиск элемента в таблице.
@@ -76,13 +77,13 @@ int RemoveElement(HashTable* table, string key);
  */
 string FindElement(HashTable* table, string key);
 
+//TODO: DONE
 /**
  * @brief Перехеширование таблицы.
  * 
  * @param table Указатель на таблицу.
- * @return HashTable* Указатель на таблицу.
  */
-HashTable* Rehashing(HashTable* table); 
+void Rehashing(HashTable* table); 
 
 /**
  * @brief Функция хеширования.
@@ -93,12 +94,11 @@ HashTable* Rehashing(HashTable* table);
  */
 int HashFunction(int capacity, string key);
 
+//TODO: DONE
 /**
  * @brief Разрешение коллизий.
  * 
  * @param first Первый эллемент.
  * @param node Новый эллемент.
- * @return true Если коллизия разрешена.
- * @return false Если коллизия не разрешена.
  */
-bool ResolveCollisions(Node* first, Node* node);
+void ResolveCollisions(Node* first, Node* node);

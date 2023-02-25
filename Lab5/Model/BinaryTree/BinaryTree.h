@@ -1,6 +1,5 @@
 #pragma once
 #include "BinaryTreeNode.h"
-#include <cstddef>
 
 /**
  * @brief Бинарное дерево.

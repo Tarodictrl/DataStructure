@@ -1,6 +1,12 @@
 #pragma once
 #include <string>
 
+//TODO: DONE
+
+/**
+ * @brief Реализует представление элемента.
+ * 
+ */
 struct Node 
 {
     /**

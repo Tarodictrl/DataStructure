@@ -35,17 +35,12 @@ bool AddElement(HashTable* table, string key, string value)
 		return true;
 	}
 
-	if (ResolveCollisions(table->Array[index], node))
-	{
-		table->Count++;
-
-		return true;
-	}
-
-	return false;
+	ResolveCollisions(table->Array[index], node);
+	table->Count++;
+	return true;
 }
 
-int RemoveElement(HashTable* table, string key)
+bool RemoveElement(HashTable* table, string key)
 {
 	int index = HashFunction(table->Capacity, key);
 
@@ -54,7 +49,7 @@ int RemoveElement(HashTable* table, string key)
 
 	if (current == nullptr) 
 	{
-		return -1;
+		return false;
 	}
 
 	if (current->Next == nullptr && current->Key == key)
@@ -62,7 +57,7 @@ int RemoveElement(HashTable* table, string key)
 		delete current;
 		table->Array[index] = nullptr;
 		table->Count--;
-		return 0;
+		return true;
 	}
 
 	while (current->Key != key)
@@ -72,7 +67,7 @@ int RemoveElement(HashTable* table, string key)
 
 		if (current == nullptr)
 		{
-			return -1;
+			return false;
 		}
 	}
 
@@ -90,7 +85,7 @@ int RemoveElement(HashTable* table, string key)
 		table->Array[index] = nextNode;
 	}
 
-	return 0;
+	return true;
 }
 
 int HashFunction(int capacity, string key)
@@ -106,7 +101,7 @@ int HashFunction(int capacity, string key)
 	return abs(hash);
 }
 
-HashTable* Rehashing(HashTable* table)
+void Rehashing(HashTable* table)
 {
 	HashTable* newTable = InitHashTable(table->Capacity * table->GrowthFactor);
 
@@ -126,25 +121,22 @@ HashTable* Rehashing(HashTable* table)
 		}	
 	}
 
-	delete[] table->Array;
-	delete table;
+	table->Count = newTable->Count;
+	table->Array = newTable->Array;
+	table->Capacity = newTable->Capacity;
 
-	return newTable;
 }
 
-bool ResolveCollisions(Node* first, Node* node)
+void ResolveCollisions(Node* first, Node* node)
 {
 	while (first != nullptr)
 	{
-		if (first->Key == node->Key && first->Value == node->Value)
-		{
-			return false;
-		}
+		//TODO: DONE
 
 		if (first->Next == nullptr)
 		{
 			first->Next = node;
-			return true;
+			return;
 		}
 
 		first = first->Next;

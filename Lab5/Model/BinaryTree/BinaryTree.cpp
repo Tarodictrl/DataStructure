@@ -1,6 +1,5 @@
 #include "BinaryTree.h"
 #include "BinaryTreeNode.h"
-#include <stdlib.h>
 
 bool AddElement(BinaryTree* tree, int data)
 {

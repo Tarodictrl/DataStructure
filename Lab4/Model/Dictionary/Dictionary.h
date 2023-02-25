@@ -12,25 +12,29 @@ struct Dictionary
 	/**
 	 * хэш-таблица.
 	 */
-	HashTable* Table = new HashTable;
+	HashTable* Table = InitHashTable(4);
 };
 
+//TODO: DONE
 /**
  * Добавляет элемент в словарь.
  */
-bool AddItem(Dictionary* dict, string value, string key);
+bool AddItem(Dictionary* dictionary, string value, string key);
 
+//TODO: DONE
 /**
  * Удаляет элемент из словаря.
  */
-int RemoveItem(Dictionary* dict, string key);
+int RemoveItem(Dictionary* dictionary, string key);
 
+//TODO: DONE
 /**
  * Находит элемент в словаре.
  */
-string FindItem(Dictionary* dict, string key);
+string FindItem(Dictionary* dictionary, string key);
 
+//TODO: DONE
 /**
  * Удаляет словарь.
  */
-void DeleteDictionary(Dictionary* dict);
+void DeleteDictionary(Dictionary* dictionary);

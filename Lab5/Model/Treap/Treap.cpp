@@ -1,6 +1,4 @@
 #include "Treap.h"
-#include <time.h>
-#include <stdlib.h>
 
 void Split(TreapNode* node, int data, TreapNode*& left, TreapNode*& right)
 {
